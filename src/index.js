@@ -1,8 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom/client'; // For React 18+
+// import ReactDOM from 'react-dom'; // For React 17-
+import './index.css'; // If you have a global CSS file
+import App from './App'; // Import your App component
+import reportWebVitals from './reportWebVitals'; // Optional, for performance metrics
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
