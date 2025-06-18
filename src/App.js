@@ -1,15 +1,28 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
+import backgroundImage from './assets/bg-thembani.png.png';
 import Navbar from './components/Navbar';
+import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Gallery from './pages/Gallery';
 import FamilyTree from './pages/FamilyTree';
 import Stories from './pages/Stories';
 
+const appStyle = {
+  backgroundImage: `url(${backgroundImage})`,
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  backgroundAttachment: 'fixed',
+  minHeight: '100vh',
+  position: 'relative',
+  overflow: 'hidden',
+};
+
 function App() {
   return (
-    <Router>
-      <div className="App">
+    <div style={appStyle}>
+      <div className="overlay" />
+      <div className="content">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -18,9 +31,11 @@ function App() {
           <Route path="/stories" element={<Stories />} />
         </Routes>
       </div>
-    </Router>
+    </div>
   );
 }
 
 export default App;
+
+
 
